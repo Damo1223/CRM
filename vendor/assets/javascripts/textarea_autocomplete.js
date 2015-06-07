@@ -22,7 +22,7 @@
         makeAutoComplete(element,obj);
       }
     });
-  }
+  };
 
   var browser =  {isChrome: $.browser.webkit };
 
@@ -171,9 +171,9 @@
     setCharSize(_data[_count]);
     //_data[_count].lineHeight = $(ta).css("font-size");
 
-    var ta_id = $(ta).attr('id')
+    var ta_id = $(ta).attr('id');
     $(ta).after("<div class='areacomplete-dropdown' id='areacomplete_"+ta_id+"'><ul class='auto-list chzn-results'></ul></div>");
-    _data[_count].list = $('.auto-list').first()
+    _data[_count].list = $('.auto-list').first();
 
     registerEvents(_data[_count]);
   }
@@ -403,7 +403,7 @@
   function ensureSelected(data) {
     var selected = $(data.list).find("[data-selected=true]");
     if( selected.length != 1 ){
-      var new_selected = $(data.list).find("li:first-child")
+      var new_selected = $(data.list).find("li:first-child");
       new_selected.attr("data-selected","true");
     }
     if (new_selected[0]) { scrollIntoView(new_selected[0]); }
@@ -413,7 +413,7 @@
     var selected = $(data.list).find("[data-selected=true]");
     // Don't allow selection to wrap from bottom
     if( selected.length != 1 && dir > 0 ){
-      var new_selected = $(data.list).find("li:first-child")
+      var new_selected = $(data.list).find("li:first-child");
       new_selected.attr("data-selected","true");
     } else {
       var new_selected = dir > 0 ? selected.next() : selected.prev();
@@ -564,8 +564,9 @@
         }
       }
 
-      if (e.keyCode == 27) { return true }; // escape
-
+      if (e.keyCode == 27) {
+        return true
+      } // escape
       var text = getWords(data);
       //console.log("getWords return ",text);
       if( text != "" ){

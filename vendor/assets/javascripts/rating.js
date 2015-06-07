@@ -51,7 +51,7 @@ var Ratable = Class.create({
       remote_parameters: ""
     }, arguments[1] || {}); 
     
-    this.stars = new Array();
+    this.stars = [];
     this.element.select(".star").each(function(element) {
       this.stars.push(new Star(element, this));      
     }.bind(this));
@@ -142,7 +142,7 @@ var Rating = Class.create({
   initialize: function() {
     this.class_name = arguments[0] || ".rating";
     this.options = arguments[1] || {};
-    this.elements = new Array();
+    this.elements = [];
 
     Ajax.Responders.register({
       onComplete: this.parse.bind(this)

@@ -44,6 +44,6 @@
           $("#advanced_search form input:submit").click()
           $('#filters').prop('disabled', true) # Disable filters panel (if present)
 
-      return
+
 
 ) jQuery
